@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Merch Store</title>
+  <style>
+     @font-face {
+      font-family: 'Cinzel Decorative';
+      src: url(CinzelDecorative-Black.ttf) format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Cinzel Decorative', sans-serif;
+      background-image: url(eyevizzy.gif);
+      background-repeat:no-repeat;
+      background-size: cover;
+      color: #ffffff;
+      margin: 60;
+      padding: 60;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px;
+      font-size: 30px
+    }
+   
+    h1 {
+      text-align: center;
+      margin-bottom: 80px;
+      font-family: 'Cinzel Decorative', sans-serif;
+      font-weight: 900;
+      font-size: 32px;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 100px;
+    }
+
+    .merch-item {
+      text-align: center;
+    }
+
+    .merch-item img {
+      max-width: 100%;
+    }
+
+    .button {
+      display: block;
+      width: 200px;
+      margin: 0 auto 20px;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ffffff;
+    }
+    .back-button {
+     font-family: 'Cinzel Decorative', sans-serif;
+      font-size: 64px;
+      padding: 0px 0px;
+      border: none;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .faq-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    .contact-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="content">
+  <div class="container">
+    <h1> <a class="back-button" href="index.html">KESCOTTI</a></h1>
+    <div class="merch-grid">
+      <div class="merch-item">
+        <img src="merch1.png" alt="Merch 1">
+        <p>Hoodie 1</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch2.png" alt="Merch 2">
+        <p>Hoodie 2</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch3.png" alt="Merch 3">
+        <p>Hoodie3</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch4.png" alt="Merch 4">
+        <p>shirt1</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch5.png" alt="Merch 5">
+        <p>shirt2</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch6.png" alt="Merch 6">
+        <p>shirt3</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch7.png" alt="Merch 7">
+        <p>hat1</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch8.png" alt="Merch 8">
+        <p>hat2</p>
+      </div>
+      <div class="merch-item">
+        <img src="merch9.png" alt="Merch 9">
+        <p>hat3</p>
+      <a href="faq.html" class="faq-button">FAQ</a>
+      <a href="contact.html" class="contact-button">Contact</a>
+    
+  </div>
+</body>
+</html>
