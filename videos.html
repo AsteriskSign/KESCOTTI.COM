@@ -4,59 +4,146 @@
   <title>Videos</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-     @font-face {
+    @font-face {
       font-family: 'Cinzel Decorative';
       src: url(CinzelDecorative-Black.ttf) format('truetype');
       font-weight: 900;
       font-style: normal;
     }
-     body{ 
-        font-family: 'Cinzel Decorative', sans-serif;
-        font-size: 32px;
+
+    body {
+      font-family: 'Cinzel Decorative', sans-serif;
+      font-size: 16px;
       background-image: url(indexvizzy.gif);
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
       background-size: cover;
       color: #ffffff;
       margin: 0;
-      padding: 0;}
-      .container {
-      max-width: 800px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 60px;
+      font-size: 0;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .video-item {
+      margin-right: 25px;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 40px;
-      font-family: 'Cinzel Decorative', sans-serif;
+      font-size: 32px;
       font-weight: 900;
-      font-size: 32px;
     }
-   
-   
+
     .back-button {
-     font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 32px;
+      font-family: 'Cinzel Decorative', sans-serif;
+      font-size: 24px;
       padding: 10px 20px;
       border: none;
       color: #fff;
       text-decoration: none;
       transition: background-color 0.3s ease;
       cursor: pointer;
-      
+    }
+
+    .prev-button,
+    .next-button {
+      width: 40px;
+      height: 40px;
+      background-color: #000;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .prev-button {
+      left: 10px;
+    }
+
+    .next-button {
+      right: 10px;
+    }
+
+    .prev-button:hover,
+    .next-button:hover {
+      background-color: #fff;
+      color: #000;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1> <a class="back-button" href="index.html">KESCOTTI</a></h1>
-    <div class="video-gallery">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+    <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <div class="video-item">
+          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-      </div>
+    </div>
+    <div class="prev-button">
+      &#8249;
+    </div>
+    <div class="next-button">
+      &#8250;
+    </div>
   </div>
+
+  <script>
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+
+    let currentPosition = 0;
+    const slideWidth = 480; // Adjust the slide width as per your requirements
+
+    function slideTo(position) {
+      currentPosition = position;
+      sliderWrapper.style.transform = `translateX(-${position * slideWidth}px)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentPosition = Math.max(currentPosition - 1, 0);
+      slideTo(currentPosition);
+    });
+
+    nextButton.addEventListener('click', () => {
+      const maxPosition = Math.floor(sliderWrapper.offsetWidth / slideWidth) - 1;
+      currentPosition = Math.min(currentPosition + 1, maxPosition);
+      slideTo(currentPosition);
+    });
+  </script>
 </body>
 </html>

@@ -2,24 +2,25 @@
 <html>
 <head>
   <title>Contact</title>
-  <style>@font-face {
-    font-family: 'Cinzel Decorative';
-    src: url(CinzelDecorative-Black.ttf) format('truetype');
-    font-weight: 900;
-    font-style: normal;
-  }
-  body { 
-    font-family: 'Cinzel Decorative', sans-serif;
-    background-image: url(indexvizzy.gif);
-    background-repeat:no-repeat;
-    background-size: cover;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-  text-align: center;
-  }
-  .back-button {
-     font-family: 'Cinzel Decorative', sans-serif;
+  <style>
+    @font-face {
+      font-family: 'Cinzel Decorative';
+      src: url(CinzelDecorative-Black.ttf) format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Cinzel Decorative', sans-serif;
+      background-image: url(eyevizzy.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .back-button {
+      font-family: 'Cinzel Decorative', sans-serif;
       font-size: 64px;
       padding: 0px 0px;
       border: none;
@@ -27,7 +28,6 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
       cursor: pointer;
-      
     }
     .banner {
       color: #ffffff;
@@ -77,13 +77,17 @@
       cursor: pointer;
       font-family: 'Cinzel Decorative', sans-serif;
     }
-   
+    .success-message {
+      color: #ffffff;
+      margin-top: 20px;
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
   <h1> <a class="back-button" href="index.html">KESCOTTI</a></h1>
   <div class="container">
-    <form class="form" action="submit.php" method="post">
+    <form class="form" action="" method="post">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -104,6 +108,31 @@
         <input type="submit" value="Submit">
       </div>
     </form>
+    <div class="success-message">
+      <!-- Success message will be displayed here -->
+    </div>
   </div>
+  <script>
+    // Add an event listener to the form submission
+    document.querySelector('.form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent the form from submitting
+      
+      // Retrieve form data
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var comment = document.getElementById('comment').value;
+      
+      // Display success message
+      var successMessage = document.querySelector('.success-message');
+      successMessage.textContent = 'Thank you, ' + name + '! Your form has been submitted.';
+      
+      // Clear form inputs
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('comment').value = '';
+    });
+  </script>
 </body>
 </html>
