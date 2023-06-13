@@ -10,140 +10,192 @@
       font-weight: 900;
       font-style: normal;
     }
-
+    *, *::after, *::before {
+      box-sizing: border-box;
+    }
+    :root {
+      --handle-size: 3rem;
+      --img-gap: .25rem;
+    }
     body {
-      font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 16px;
+      margin: 0;
       background-image: url(indexvizzy.gif);
       background-repeat: no-repeat;
       background-size: cover;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
+      color: blanchedalmond;
+      font-family: 'Cinzel Decorative', sans-serif;
     }
-
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px;
-      font-size: 0;
-    }
-
-    .slider-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slider-wrapper {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      overflow: hidden;
+      background-color: black;
     }
-
-    .video-item {
-      margin-right: 25px;
+    .h3 {
+      font-family: 'Cinzel Decorative', sans-serif;
     }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
+    .slider {
+      --items-per-screen: 3;
+      --slider-index: 0;
+      display: flex;
+      flex-grow: 1;
+      margin: 0 var(--img-gap);
+      transform: translateX(calc(var(--slider-index) * -100%));
+      transition: transform 550ms ease-in-out;
+    }
+    .slider > video {
+      flex: 0 0 calc(33.33% - var(--img-gap) * 2); 
+      max-width: calc(100% - var(--img-gap) * 2); 
+      aspect-ratio: 16/9;
+      padding: var(--img-gap);
+      border-radius: 1rem;
+      transition: transform 100ms, opacity 0.5s ease; 
+    }
+    .slider > img:hover {
+      transform: scale(0.5.0.5);
+    }
+    .handle {
+      border: none;
+      color: rgb(255, 255, 255);
+      border-radius: 1rem;
+      flex-grow: 0;
+      z-index: 10;
+      margin: var(--img-gap);
+      cursor: crosshair;
+      font-size: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      transition: transform 150ms ease-in-out;
+    }
+    .left-handle, .right-handle {
+      border-radius: 50%;
+      align-content: center;
+    }
+    .handle:hover {
+      font-size: 6rem;
+    }
+    .handle:hover::after {
+      color: antiquewhite;
+    }
+    .container:hover .left-handle::after {
+      content: "\219E";
+    }
+    .container:hover .right-handle::after {
+      content: "\21A0";
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem calc(var(--img-gap) + var(--handle-size)) * 2 + var(--handle-size);
+    }
+    .title {
       font-size: 32px;
-      font-weight: 900;
+      margin: 0;
+      margin-top: 100px;
     }
-
+    .progress-bar {
+      display: flex;
+      width: 50px;
+    }
+    .progress-item {
+      flex: 0 0 1.5rem;
+      height: 1rem;
+      min-width: 1.5rem;
+      background-color: rgba(61, 60, 60, 0.5);
+    }
+    .progress-item.active {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+    .slider img.forward-transition {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 24px;
-      padding: 10px 20px;
+      font-size: 64px;
+      padding: 0;
       border: none;
-      color: #fff;
+      color: antiquewhite;
       text-decoration: none;
       transition: background-color 0.3s ease;
-      cursor: pointer;
+      cursor: crosshair;
+      text-align: center;
+      margin-right: 190px;
     }
-
-    .prev-button,
-    .next-button {
-      width: 40px;
-      height: 40px;
-      background-color: #000;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .prev-button {
-      left: 10px;
-    }
-
-    .next-button {
-      right: 10px;
-    }
-
-    .prev-button:hover,
-    .next-button:hover {
-      background-color: #fff;
-      color: #000;
+    @media (max-width: 1000px) {
+      .slider {
+        --items-per-screen: 3;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="header">
+    <h3 class="title">Videos</h3>
     <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
-    <div class="slider-container">
-      <div class="slider-wrapper">
-        <div class="video-item">
-          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-          <iframe width="400" height="220" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <div class="progress-bar">
+        <div class="progress-item active"></div>
+        <div class="progress-item"></div>
+        <div class="progress-item"></div>
+        <div class="progress-item"></div>
+        <div class="progress-item"></div>
       </div>
     </div>
-    <div class="prev-button">
-      &#8249;
+    <div class="container">
+      <div class="container-banner"></div>
+      <div class="slider">
+        <div class="video-container">
+          <div id="player1"></div>
+        </div>
+        <div class="video-container">
+          <div id="player2"></div>
+        </div>
+        <div class="video-container">
+          <div id="player3"></div>
+        </div>
+        <!-- Repeat the videos to continue the slider -->
+        <div class="video-container">
+          <div id="player1"></div>
+        </div>
+        <div class="video-container">
+          <div id="player2"></div>
+        </div>
+        <div class="video-container">
+          <div id="player3"></div>
+        </div>
+        <!-- Repeat the videos to continue the slider -->
+        <div class="video-container">
+          <div id="player1"></div>
+        </div>
+        <div class="video-container">
+          <div id="player2"></div>
+        </div>
+        <div class="video-container">
+          <div id="player3"></div>
+        </div>
+        <div class="video-container">
+          <div id="player1"></div>
+        </div>
+        <div class="video-container">
+          <div id="player2"></div>
+        </div>
+        <div class="video-container">
+          <div id="player3"></div>
+        </div>
+        <!-- Repeat the videos to continue the slider -->
+      </div>
     </div>
-    <div class="next-button">
-      &#8250;
-    </div>
+  
+  <div class="handle">
+    <button class="handle left-handle">&#8606;</button>
+    <button class="handle right-handle">&#8608;</button>
   </div>
+  <script src="videos.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 
-  <script>
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-    const prevButton = document.querySelector('.prev-button');
-    const nextButton = document.querySelector('.next-button');
-
-    let currentPosition = 0;
-    const slideWidth = 480; // Adjust the slide width as per your requirements
-
-    function slideTo(position) {
-      currentPosition = position;
-      sliderWrapper.style.transform = `translateX(-${position * slideWidth}px)`;
-    }
-
-    prevButton.addEventListener('click', () => {
-      currentPosition = Math.max(currentPosition - 1, 0);
-      slideTo(currentPosition);
-    });
-
-    nextButton.addEventListener('click', () => {
-      const maxPosition = Math.floor(sliderWrapper.offsetWidth / slideWidth) - 1;
-      currentPosition = Math.min(currentPosition + 1, maxPosition);
-      slideTo(currentPosition);
-    });
-  </script>
 </body>
 </html>

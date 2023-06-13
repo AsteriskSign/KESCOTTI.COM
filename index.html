@@ -3,6 +3,7 @@
 <head>
   <title>KESCOTTI</title>
   <style>
+
     @font-face {
       font-family: 'Cinzel Decorative';
       src: url(CinzelDecorative-Black.ttf) format('truetype');
@@ -36,6 +37,9 @@
       font-size: 75px;
     }
     .button {
+      box-shadow:inset 0px 0px 0px -50px #000000;
+      border-radius:42px;
+      border:1px solid #ffffff;
       display: inline-block;
       margin-bottom: 20px;
       padding: 10px 20px;
@@ -46,6 +50,9 @@
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }
+    .button:active {
+  box-shadow: 0 5px #000000;
+  transform: translateY(4px);}
     .button:hover {
       background-color: #000000;
       color: #ffffff;
@@ -137,4 +144,32 @@
     <a class="button" href="contact.html">Contact Us</a>
   </div>
 </body>
+<script>
+var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://api.example.com/data', true);
+  
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var response = JSON.parse(xhr.responseText);
+      console.log(response);
+    }
+  };
+  
+  xhr.send();
+  fetch('https://api.example.com/data')
+  .then(function(response) {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Error: ' + response.status);
+    }
+  })
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+
+  </script>
 </html>
