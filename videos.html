@@ -45,16 +45,16 @@
       transform: translateX(calc(var(--slider-index) * -100%));
       transition: transform 550ms ease-in-out;
     }
-    .slider > video {
-      flex: 0 0 calc(33.33% - var(--img-gap) * 2); 
-      max-width: calc(100% - var(--img-gap) * 2); 
+    .slider > iframe {
+      flex: 0 0 calc(100% - var(--img-gap) * 2); 
+      max-width: calc(33% - var(--img-gap) * 2); 
       aspect-ratio: 16/9;
       padding: var(--img-gap);
       border-radius: 1rem;
       transition: transform 100ms, opacity 0.5s ease; 
     }
     .slider > img:hover {
-      transform: scale(0.5.0.5);
+      transform: scale(0.5);
     }
     .handle {
       border: none;
@@ -90,7 +90,7 @@
     .header {
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem calc(var(--img-gap) + var(--handle-size)) * 2 + var(--handle-size);
+      padding: 0.5rem calc(var(--img-gap) + var(--handle-size) * 2 + var(--handle-size));
     }
     .title {
       font-size: 32px;
@@ -138,64 +138,113 @@
     <h3 class="title">Videos</h3>
     <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
     <div class="progress-bar">
-        <div class="progress-item active"></div>
-        <div class="progress-item"></div>
-        <div class="progress-item"></div>
-        <div class="progress-item"></div>
-        <div class="progress-item"></div>
-      </div>
+      <div class="progress-item active"></div>
+      <div class="progress-item"></div>
+      <div class="progress-item"></div>
+      <div class="progress-item"></div>
+      <div class="progress-item"></div>
     </div>
-    <div class="container">
-      <div class="container-banner"></div>
-      <div class="slider">
-        <div class="video-container">
-          <div id="player1"></div>
-        </div>
-        <div class="video-container">
-          <div id="player2"></div>
-        </div>
-        <div class="video-container">
-          <div id="player3"></div>
-        </div>
-        <!-- Repeat the videos to continue the slider -->
-        <div class="video-container">
-          <div id="player1"></div>
-        </div>
-        <div class="video-container">
-          <div id="player2"></div>
-        </div>
-        <div class="video-container">
-          <div id="player3"></div>
-        </div>
-        <!-- Repeat the videos to continue the slider -->
-        <div class="video-container">
-          <div id="player1"></div>
-        </div>
-        <div class="video-container">
-          <div id="player2"></div>
-        </div>
-        <div class="video-container">
-          <div id="player3"></div>
-        </div>
-        <div class="video-container">
-          <div id="player1"></div>
-        </div>
-        <div class="video-container">
-          <div id="player2"></div>
-        </div>
-        <div class="video-container">
-          <div id="player3"></div>
-        </div>
-        <!-- Repeat the videos to continue the slider -->
-      </div>
+  </div>
+  <div class="container">
+    <div class="container-banner"></div>
+    <div class="slider">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" ></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" ></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" ></iframe>
+      <!-- Repeat the iframes to continue the slider -->
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" ></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" ></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" ></iframe>
+      <!-- Repeat the iframes to continue the slider -->
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" ></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" ></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" ></iframe>
+      <!-- Repeat the iframes to continue the slider -->
     </div>
-  
+  </div>
   <div class="handle">
     <button class="handle left-handle">&#8606;</button>
     <button class="handle right-handle">&#8608;</button>
   </div>
-  <script src="videos.js"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
-
+  <script>document.addEventListener("DOMContentLoaded", () => {
+    const progressBar = document.querySelector(".progress-bar");
+    const slider = document.querySelector(".slider");
+    const handles = document.querySelectorAll(".handle");
+  
+    handles.forEach((handle) => {
+      handle.addEventListener("click", () => {
+        onHandleClick(handle, progressBar, slider);
+      });
+    });
+  
+    calculateProgressBar();
+  
+    window.addEventListener("resize", () => {
+      throttleProgressBar();
+    });
+  });
+  
+  function onHandleClick(handle, progressBar, slider) {
+    const sliderIndex = parseInt(
+      getComputedStyle(slider).getPropertyValue("--slider-index")
+    );
+    const progressBarItemCount = progressBar.children.length;
+  
+    if (handle.classList.contains("left-handle")) {
+      const newIndex =
+        sliderIndex - 1 < 0 ? progressBarItemCount - 1 : sliderIndex - 1;
+      updateSlider(newIndex, progressBar, slider);
+    } else if (handle.classList.contains("right-handle")) {
+      const newIndex = (sliderIndex + 1) % progressBarItemCount;
+      updateSlider(newIndex, progressBar, slider);
+    }
+  }
+  
+  function updateSlider(index, progressBar, slider) {
+    slider.style.setProperty("--slider-index", index);
+    calculateProgressBar();
+  
+    const videos = slider.querySelectorAll("video");
+    videos.forEach((video) => {
+      video.pause();
+    });
+  
+    const visibleVideos = slider.querySelectorAll(
+      `video:nth-child(${index + 1})`
+    );
+    visibleVideos.forEach((video) => {
+      video.play();
+    });
+  }
+  
+  function calculateProgressBar() {
+    const progressBar = document.querySelector(".progress-bar");
+    const progressBarItemCount = progressBar.children.length;
+    const sliderIndex = parseInt(
+      getComputedStyle(slider).getPropertyValue("--slider-index")
+    );
+  
+    const progressItems = progressBar.querySelectorAll(".progress-item");
+    progressItems.forEach((item, index) => {
+      if (index === sliderIndex) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  
+    const translatePercentage = (sliderIndex / progressBarItemCount) * 100;
+    progressBar.style.transform = `translateX(${translatePercentage}%)`;
+  }
+  
+  let resizeTimeout;
+  function throttleProgressBar() {
+    if (!resizeTimeout) {
+      resizeTimeout = setTimeout(() => {
+        resizeTimeout = null;
+        calculateProgressBar();
+      }, 500);
+    }
+  }</script>
 </body>
 </html>
