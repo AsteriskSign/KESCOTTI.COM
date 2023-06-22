@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <style>
+    @font-face {
+      font-family: 'Cinzel Decorative';
+      src: url(CinzelDecorative-Black.ttf) format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      background-color: #000000;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgb(0, 0, 0);
+      font-family: 'Cinzel Decorative', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel {
+      margin-bottom: 20px;
+    }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .slick-dots li {
+      margin: 0 5px;
+    }
+
+    .slick-dots li button {
+      font-size: 14px;
+      line-height: 1;
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #747373ad;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    .slick-dots li.slick-active button {
+      opacity: 1;
+    }
+
+    .slick-slide {
+      text-align: center;
+      color: #000;
+      background: #000000;
+    }
+
+    video {
+      width: calc(33.33% - 1.33in);
+      height: auto;
+      margin: 0.5in;
+    }
+
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      top: 100%;
+      transform: translateY(-50%);
+      z-index: 1;
+      font-size: 24px;
+      line-height: 1;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: #747373ad;
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    .slick-prev {
+      left: 50px;
+    }
+
+    .slick-next {
+      right: 50px;
+    }
+
+    .slick-prev:hover,
+    .slick-next:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel">
+    <div>
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <video controls>
+        <source src="video4.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video5.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video6.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <video controls>
+        <source src="video7.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video8.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video9.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
+  <button class="slick-prev slick-arrow" aria-label="Previous" type="button">Previous</button>
+  <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.carousel').slick({
+      dots: true, // Show navigation dots
+      infinite: true, // Enable infinite scrolling
+      speed: 300, // Transition speed in milliseconds
+      slidesToShow: 1, // Number of slides to show at a time
+      adaptiveHeight: true // Adjust slide height based on content
+    });
+  });
+</script>
+
+</body>
+</html>
