@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
   <title>Merch Store</title>
   <style>
     @font-face {
@@ -93,6 +94,37 @@
     .contact-button {
       left: 20px;
     }
+    .social-section {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .social-section h2 {
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+    }
+    .social-buttons a {
+      margin: 0 20px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .social-button {
+      opacity: 100%;
+      transition: opacity 0s ease;
+      width: 24px;
+      height: 24px;
+    }
+    .social-button:hover {
+      opacity: 1;
+    }
 
     .product-card {
       display: flex;
@@ -137,8 +169,6 @@
         <div class="AddToCart">
           <button>Add to Cart</button>
         </div>
-      </div>
-      
     </div>
   </div>
   <div class="social-section">

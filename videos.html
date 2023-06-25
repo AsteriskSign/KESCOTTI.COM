@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Videos</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     @font-face {
       font-family: 'Cinzel Decorative';
@@ -10,241 +16,169 @@
       font-weight: 900;
       font-style: normal;
     }
-    *, *::after, *::before {
-      box-sizing: border-box;
-    }
-    :root {
-      --handle-size: 3rem;
-      --img-gap: .25rem;
-    }
     body {
-      margin: 0;
-      background-image: url(indexvizzy.gif);
+      font-family: 'Cinzel Decorative', sans-serif;
+      background-color: #000000;
       background-repeat: no-repeat;
       background-size: cover;
-      color: blanchedalmond;
-      font-family: 'Cinzel Decorative', sans-serif;
     }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-      justify-content: center; 
-      overflow: hidden;
-      background-color: black;
+    .slick-slide {
+      margin: 0 5px;
     }
-    .h3 {
-      font-family: 'Cinzel Decorative', sans-serif;
+    section {
+      padding: 0 100px;
     }
-    .slider {
-      --items-per-screen: 3;
-      --slider-index: 0;
-      display: flex;
-      flex-grow: 1;
-      margin: 0 var(--img-gap);
-      transform: translateX(calc(var(--slider-index) * -100%));
-      transition: transform 550ms ease-in-out;
+    .slick-prev:before,
+    .slick-next:before {
+      color: #000;
     }
-    .slider > iframe {
-      flex: 0 0 calc(100% - var(--img-gap) * 2); 
-      max-width: calc(33% - var(--img-gap) * 2); 
-      aspect-ratio: 16/9;
-      padding: var(--img-gap);
-      border-radius: 1rem;
-      transition: transform 100ms, opacity 0.5s ease; 
+    .center {
+      position: relative;
+      margin-top: 33vh;
+      transform: translateY(-50%);
     }
-    .slider > img:hover {
-      transform: scale(0.5);
-    }
-    .handle {
-      border: none;
-      color: rgb(255, 255, 255);
-      border-radius: 1rem;
-      flex-grow: 0;
-      z-index: 10;
-      margin: var(--img-gap);
+    .center img {
+      width: 75px;
+      height: 250px;
+      object-fit: fill;
+      transition: transform 0.3s ease;
       cursor: crosshair;
-      font-size: 64px;
+    }
+    .center img:hover {
+      transform: scale(1.05);
+    }
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      font-size: 100px;
+      color: #fff;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      line-height: 0;
-      transition: transform 150ms ease-in-out;
+      cursor: crosshair;
     }
-    .left-handle, .right-handle {
-      border-radius: 50%;
-      align-content: center;
+    .slick-prev {
+      left: 450px;
+      top: 600px;
     }
-    .handle:hover {
-      font-size: 6rem;
-    }
-    .handle:hover::after {
-      color: antiquewhite;
-    }
-    .container:hover .left-handle::after {
-      content: "\219E";
-    }
-    .container:hover .right-handle::after {
-      content: "\21A0";
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem calc(var(--img-gap) + var(--handle-size) * 2 + var(--handle-size));
-    }
-    .title {
-      font-size: 32px;
-      margin: 0;
-      margin-top: 100px;
-    }
-    .progress-bar {
-      display: flex;
-      width: 50px;
-    }
-    .progress-item {
-      flex: 0 0 1.5rem;
-      height: 1rem;
-      min-width: 1.5rem;
-      background-color: rgba(61, 60, 60, 0.5);
-    }
-    .progress-item.active {
-      background-color: rgba(255, 255, 255, 0.75);
-    }
-    .slider img.forward-transition {
-      opacity: 0;
-      transition: opacity 0.5s ease;
+    .slick-next {
+      right: 450px;
+      top: 600px;
     }
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 64px;
-      padding: 0;
+      font-size: 72px;
+      padding: 10px 20px;
       border: none;
-      color: antiquewhite;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+      color: #fff;
+      text-decoration: underline;
       cursor: crosshair;
-      text-align: center;
-      margin-right: 190px;
     }
-    @media (max-width: 1000px) {
-      .slider {
-        --items-per-screen: 3;
-      }
+    .button-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .button {
+      margin-left: 30px;
+      color: #fff;
+      cursor: crosshair;
+      font-size: 36px;
     }
   </style>
+
 </head>
 <body>
-  <div class="header">
-    <h3 class="title">Videos</h3>
-    <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
-    <div class="progress-bar">
-      <div class="progress-item active"></div>
-      <div class="progress-item"></div>
-      <div class="progress-item"></div>
-      <div class="progress-item"></div>
-      <div class="progress-item"></div>
+  <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
+
+  <div class="button-container">
+    <a class="button" href="merch.html">Store</a>
+    <a class="button" href="tour.html">Tour</a>
+    <a class="button" href="contact.html">Contact Us</a>
+  </div>
+
+  <section>
+    <div class="center">
+      <div>
+        <a href="https://www.youtube.com/watch?v=GZe2JAPlmjo&list=OLAK5uy_lSsn75ASv34sLTODbpg-nISrQv7ltxNdQ">
+          <img data-lazy="jail.jpg" style="width: 100%;">
+        </a>
+      </div>
+
+      <div>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_2">
+          <img data-lazy="slider/slide-img2.jpg" style="width: 100%;">
+        </a>
+      </div>
+
+      <div>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_3">
+          <img data-lazy="slider/slide-img3.jpg" style="width: 100%;">
+        </a>
+      </div>
+
+      <div>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_4">
+          <img data-lazy="slider/banner3.jpg" style="width: 100%;">
+        </a>
+      </div>
+
+      <div>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_5">
+          <img data-lazy="slider/banner4.jpg" style="width: 100%;">
+        </a>
+      </div>
+
+      <div>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_6">
+          <img data-lazy="slider/banner5.jpg" style="width: 100%;">
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="container-banner"></div>
-    <div class="slider">
-      <iframe src="https://www.youtube.com/watch?v=GZe2JAPlmjo&list=OLAK5uy_lSsn75ASv34sLTODbpg-nISrQv7ltxNdQ" frameborder="0" ></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" ></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" ></iframe>
-      <!-- Repeat the iframes to continue the slider -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" ></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" ></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" ></iframe>
-      <!-- Repeat the iframes to continue the slider -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" ></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" ></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" ></iframe>
-      <!-- Repeat the iframes to continue the slider -->
-    </div>
-  </div>
-  <div class="handle">
-    <button class="handle left-handle">&#8606;</button>
-    <button class="handle right-handle">&#8608;</button>
-  </div>
-  <script>document.addEventListener("DOMContentLoaded", () => {
-    const progressBar = document.querySelector(".progress-bar");
-    const slider = document.querySelector(".slider");
-    const handles = document.querySelectorAll(".handle");
-  
-    handles.forEach((handle) => {
-      handle.addEventListener("click", () => {
-        onHandleClick(handle, progressBar, slider);
-      });
+    <div class="slick-prev">&#10229;</div>
+    <div class="slick-next">&#10230;</div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+  <script>
+    $('.center').slick({
+      lazyLoad: 'ondemand',
+      centerPadding: '60px',
+      slidesToShow: 3,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      draggable: true,
+      prevArrow: $('.slick-prev'),
+      nextArrow: $('.slick-next'),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
     });
-  
-    calculateProgressBar();
-  
-    window.addEventListener("resize", () => {
-      throttleProgressBar();
-    });
-  });
-  
-  function onHandleClick(handle, progressBar, slider) {
-    const sliderIndex = parseInt(
-      getComputedStyle(slider).getPropertyValue("--slider-index")
-    );
-    const progressBarItemCount = progressBar.children.length;
-  
-    if (handle.classList.contains("left-handle")) {
-      const newIndex =
-        sliderIndex - 1 < 0 ? progressBarItemCount - 1 : sliderIndex - 1;
-      updateSlider(newIndex, progressBar, slider);
-    } else if (handle.classList.contains("right-handle")) {
-      const newIndex = (sliderIndex + 1) % progressBarItemCount;
-      updateSlider(newIndex, progressBar, slider);
-    }
-  }
-  
-  function updateSlider(index, progressBar, slider) {
-    slider.style.setProperty("--slider-index", index);
-    calculateProgressBar();
-  
-    const videos = slider.querySelectorAll("video");
-    videos.forEach((video) => {
-      video.pause();
-    });
-  
-    const visibleVideos = slider.querySelectorAll(
-      `video:nth-child(${index + 1})`
-    );
-    visibleVideos.forEach((video) => {
-      video.play();
-    });
-  }
-  
-  function calculateProgressBar() {
-    const progressBar = document.querySelector(".progress-bar");
-    const progressBarItemCount = progressBar.children.length;
-    const sliderIndex = parseInt(
-      getComputedStyle(slider).getPropertyValue("--slider-index")
-    );
-  
-    const progressItems = progressBar.querySelectorAll(".progress-item");
-    progressItems.forEach((item, index) => {
-      if (index === sliderIndex) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
-    });
-  
-    const translatePercentage = (sliderIndex / progressBarItemCount) * 100;
-    progressBar.style.transform = `translateX(${translatePercentage}%)`;
-  }
-  
-  let resizeTimeout;
-  function throttleProgressBar() {
-    if (!resizeTimeout) {
-      resizeTimeout = setTimeout(() => {
-        resizeTimeout = null;
-        calculateProgressBar();
-      }, 500);
-    }
-  }</script>
+  </script>
 </body>
 </html>
