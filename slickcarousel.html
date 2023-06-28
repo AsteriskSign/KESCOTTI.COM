@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <title>Videos</title>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <style>
     @font-face {
       font-family: 'Cinzel Decorative';
@@ -75,15 +77,15 @@
     }
 
     video {
-      width: calc(33.33% - 1.33in);
+      width: 500px;
       height: auto;
-      margin: 0.5in;
+      margin: 0.15in;
     }
 
     .slick-prev,
     .slick-next {
       position: absolute;
-      top: 100%;
+      top: 50%;
       transform: translateY(-50%);
       z-index: 1;
       font-size: 24px;
@@ -119,54 +121,28 @@
 <div class="carousel-container">
   <div class="carousel">
     <div>
-      <video controls>
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video2.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video3.mp4" type="video/mp4">
-      </video>
+      <video class="lazy" data-src="C:\Users\harlo\Downloads\website\videoplayback.mp4"></video>
     </div>
     <div>
-      <video controls>
-        <source src="video4.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video5.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video6.mp4" type="video/mp4">
-      </video>
+      <video class="lazy" data-src="path_to_video2.mp4"></video>
     </div>
     <div>
-      <video controls>
-        <source src="video7.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video8.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video9.mp4" type="video/mp4">
-      </video>
+      <video class="lazy" data-src="path_to_video3.mp4"></video>
     </div>
   </div>
-  
-  <button class="slick-prev slick-arrow" aria-label="Previous" type="button">Previous</button>
-  <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
+
+  <button class="slick-prev slick-arrow" aria-label="Previous" type="button"></button>
+  <button class="slick-next slick-arrow" aria-label="Next" type="button"></button>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="slick/slick.min.js"></script>
 <script>
   $(document).ready(function(){
     $('.carousel').slick({
-      dots: true, // Show navigation dots
-      infinite: true, // Enable infinite scrolling
-      speed: 300, // Transition speed in milliseconds
-      slidesToShow: 1, // Number of slides to show at a time
-      adaptiveHeight: true // Adjust slide height based on content
+      lazyLoad: 'ondemand', // Enable lazy loading
+      prevArrow: $('.slick-prev'), // Use custom prev button
+      nextArrow: $('.slick-next') // Use custom next button
     });
   });
 </script>

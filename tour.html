@@ -12,7 +12,7 @@
     }
     body {
       font-family: 'Cinzel Decorative', sans-serif;
-      background-image: url(merchvizzy.gif);
+      background-color: black;
       background-repeat: no-repeat;
       background-size: cover;
       color: #fff;
@@ -20,7 +20,7 @@
       padding: 60px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
 
     h1 {
@@ -31,14 +31,14 @@
 
     .tour-dates {
       list-style-type: none;
-      margin-top: 50px;
-      margin-left: 0;
+      margin-top: 100px; /* Adjust the margin-top value as per your requirement */
+      margin-left: 600px;
       padding: 0;
     }
 
     .tour-dates li {
       margin-bottom: 30px;
-      font-size: 24px;
+      font-size: 32px; /* Adjust the font-size value as per your requirement */
     }
 
     .back-button {
@@ -47,9 +47,23 @@
       padding: 10px 20px;
       border: none;
       color: #fff;
-      text-decoration: none;
+      text-decoration: underline;
       transition: background-color 0.3s ease;
-      cursor: pointer;
+      cursor: crosshair;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .button-container {
+      position: absolute;
+      top: 850px;
+      right: 10px;
+    }
+    .button {
+      margin-left: 30px;
+      color: #fff;
+      cursor: crosshair;
+      font-size: 28px;
     }
   </style>
 </head>
@@ -62,5 +76,11 @@
     <li>MAKE - City D</li>
     <li>IT - City E</li>
   </ul>
+  <div class="button-container">
+    <a class="button" href="music.html">Music</a>
+    <a class="button" href="merch.html">Store</a>
+    <a class="button" href="tour.html">Tour</a>
+    <a class="button" href="contact.html">Contact Us</a>
+  </div>
 </body>
 </html>

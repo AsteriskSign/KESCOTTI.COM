@@ -23,7 +23,7 @@
       background-size: cover;
     }
     .slick-slide {
-      margin: 0 5px;
+      margin: 0 10px;
     }
     section {
       padding: 0 100px;
@@ -34,7 +34,7 @@
     }
     .center {
       position: relative;
-      margin-top: 33vh;
+      margin-top: 22vh;
       transform: translateY(-50%);
     }
     .center img {
@@ -55,7 +55,7 @@
       z-index: 1;
       font-size: 100px;
       color: #fff;
-      cursor: pointer;
+      cursor: crosshair;
       background: transparent;
       border-radius: 50%;
       display: flex;
@@ -65,11 +65,11 @@
     }
     .slick-prev {
       left: 450px;
-      top: 600px;
+      top: 620px;
     }
     .slick-next {
       right: 450px;
-      top: 600px;
+      top: 620px;
     }
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
@@ -86,21 +86,83 @@
       right: 10px;
     }
     .button {
-      margin-left: 30px;
+  margin-left: 50px;
+  color: #ffffff;
+  cursor: crosshair;
+  font-size: 28px;
+}
+    .social-section {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .social-section h2 {
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+    }
+    .social-buttons a {
+      margin: 0 20px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .social-button {
+      opacity: 100%;
+      transition: opacity 0s ease;
+      width: 24px;
+      height: 24px;
+    }
+    .social-button:hover {
+      opacity: 1;
+    }
+    h2 {
+      text-decoration:underline;
+      text-align: center;
+      font-size: 40px;
+      margin-top: 85px;
       color: #fff;
-      cursor: crosshair;
-      font-size: 36px;
     }
   </style>
 
 </head>
 <body>
   <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
-
+  <h2>videos</h2>
   <div class="button-container">
-    <a class="button" href="merch.html">Store</a>
     <a class="button" href="tour.html">Tour</a>
-    <a class="button" href="contact.html">Contact Us</a>
+    <a class="button" href="music.html">Music</a>
+    <a class="button" href="merch.html">Store</a>
+  </div>
+
+  <div class="social-section">
+    <h2></h2>
+    <div class="social-buttons">
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="pngfind.com-facebook-icon-white-png-2902824.png" alt="Facebook" class="social-button">
+      </a>
+      <a href="https://www.instagram.com/kescotti/" target="_blank">
+        <img src="pngfind.com-instagram-png-white-2773517.png" alt="Instagram" class="social-button">
+      </a>
+      <a href="https://twitter.com/" target="_blank">
+        <img src="twitter logo.png" alt="Twitter" class="social-button">
+      </a>
+      <a href="https://discord.com/" target="_blank">
+        <img src="discord logo.png" alt="Discord" class="social-button">
+      </a>
+      <a href="https://tiktok.com/" target="_blank">
+        <img src="tiktok logo.png" alt="TikTok" class="social-button">
+      </a>
+      <a href="https://YouTube.com/" target="_blank">
+        <img src="youtube logo.png" alt="YouTube" class="social-button">
+      </a>
+    </div>
   </div>
 
   <section>
@@ -154,7 +216,7 @@
       centerPadding: '60px',
       slidesToShow: 3,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 2400,
       draggable: true,
       prevArrow: $('.slick-prev'),
       nextArrow: $('.slick-next'),

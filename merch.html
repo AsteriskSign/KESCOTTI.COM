@@ -13,10 +13,9 @@
 
     body {
       font-family: 'Cinzel Decorative', sans-serif;
-      background-image: url(eyevizzy.gif);
+      background-color: #000000;
       background-repeat: no-repeat;
       background-size: cover;
-      color: #ffffff;
       margin: 0;
       padding: 0;
     }
@@ -39,22 +38,24 @@
     .merch-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 100px;
+      grid-gap: 50px;
+      margin-top: 75px; /* Adjust the margin-top value as per your requirement */
     }
 
     .merch-item {
       text-align: center;
+      color: #ffffff;
     }
 
     .merch-item img {
-      max-width: 100px;
+      max-width: 75px;
     }
 
     .button {
       display: block;
       width: 200px;
       margin: 0 auto 20px;
-      padding: 10px 20px;
+      padding: 5px 5px;
       color: #ffffff;
       text-align: center;
       text-decoration: none;
@@ -64,36 +65,23 @@
 
     .button:hover {
       background-color: #ffffff;
-      color: #000000;
+      color: #ffffff;
     }
 
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 64px;
-      padding: 0;
+      font-size: 72px;
+      padding: 10px 20px;
       border: none;
-      color: #ffffff;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .faq-button,
-    .contact-button {
-      position: fixed;
-      bottom: 20px;
-      color: #ffffff;
-      text-decoration: none;
-      size: 50px;
-    }
-
-    .faq-button {
-      right: 20px;
-    }
-
-    .contact-button {
+      color: #fff;
+      text-decoration: underline;
+      cursor: crosshair;
+      position: absolute;
+      top: 20px;
       left: 20px;
     }
+
+
     .social-section {
       position: absolute;
       bottom: 20px;
@@ -101,14 +89,17 @@
       right: 0;
       text-align: center;
     }
+
     .social-section h2 {
       margin-bottom: 40px;
       color: #000000;
     }
+
     .social-buttons {
       display: flex;
       justify-content: center;
     }
+
     .social-buttons a {
       margin: 0 20px;
       text-decoration: none;
@@ -116,12 +107,14 @@
       flex-direction: row;
       align-items: center;
     }
+
     .social-button {
       opacity: 100%;
       transition: opacity 0s ease;
       width: 24px;
       height: 24px;
     }
+
     .social-button:hover {
       opacity: 1;
     }
@@ -132,7 +125,7 @@
       align-items: center;
       margin-bottom: 20px;
       padding: 20px;
-      border: 1px solid #000000;
+      border: 1px solid #ffffff;
       border-radius: 5px;
     }
 
@@ -150,15 +143,40 @@
       font-size: 18px;
       padding: 20px 20px;
       border: none;
-      color: #ffffff;
+      color: #000000;
       text-decoration: none;
       cursor: pointer;
       text-align: center;
-      background-color: #000000;
+      background-color: #ffffff;
     }
+
+    .button-container {
+  position: fixed;
+  top: 2px;
+  right: 10px;
+  font-family: 'Cinzel Decorative', sans-serif;
+  z-index: 9999;
+  display: flex;
+}
+
+.buttons {
+  margin: 20px;
+  color: #fff;
+  cursor: crosshair;
+  font-size: 36px;
+  z-index: 9999;
+  display: inline-block;
+}
   </style>
 </head>
 <body>
+  <div class="button-container">
+    <a class="buttons" href="faq.html">FAQ</a>
+    <a class="buttons" href="tour.html">Tour</a>
+    <a class="buttons" href="music.html">Music</a>
+    <a class="buttons" href="videos.html">Videos</a>
+    <a class="buttons" href="contact.html">Contact us</a>
+  </div>
   <div class="container">
     <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
     <div class="merch-grid">
@@ -169,31 +187,31 @@
         <div class="AddToCart">
           <button>Add to Cart</button>
         </div>
+      </div>
+    </div>
+    <div class="social-section">
+      <h2></h2>
+      <div class="social-buttons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="pngfind.com-facebook-icon-white-png-2902824.png" alt="Facebook" class="social-button">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img src="pngfind.com-instagram-png-white-2773517.png" alt="Instagram" class="social-button">
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <img src="twitter logo.png" alt="Twitter" class="social-button">
+        </a>
+        <a href="https://discord.com/" target="_blank">
+          <img src="discord logo.png" alt="Discord" class="social-button">
+        </a>
+        <a href="https://tiktok.com/" target="_blank">
+          <img src="tiktok logo.png" alt="TikTok" class="social-button">
+        </a>
+        <a href="https://YouTube.com/" target="_blank">
+          <img src="youtube logo.png" alt="YouTube" class="social-button">
+        </a>
+      </div>
     </div>
   </div>
-  <div class="social-section">
-    <h2></h2>
-    <div class="social-buttons">
-      <a href="https://www.facebook.com/" target="_blank">
-        <img src="pngfind.com-facebook-icon-white-png-2902824.png" alt="Facebook" class="social-button">
-      </a>
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="pngfind.com-instagram-png-white-2773517.png" alt="Instagram" class="social-button">
-      </a>
-      <a href="https://twitter.com/" target="_blank">
-        <img src="twitter logo.png" alt="Twitter" class="social-button">
-      </a>
-      <a href="https://discord.com/" target="_blank">
-        <img src="discord logo.png" alt="Discord" class="social-button">
-      </a>
-      <a href="https://tiktok.com/" target="_blank">
-        <img src="tiktok logo.png" alt="TikTok" class="social-button">
-      </a>
-      <a href="https://YouTube.com/" target="_blank">
-        <img src="youtube logo.png" alt="YouTube" class="social-button">
-      </a>
-    </div>
-  <a href="faq.html" class="faq-button">FAQ</a>
-  <a href="contact.html" class="contact-button">Contact</a>
 </body>
 </html>
