@@ -3,6 +3,8 @@
 <head>
   <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
   <title>Merch Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     @font-face {
       font-family: 'Cinzel Decorative';
@@ -18,11 +20,19 @@
       background-size: cover;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       max-width: 800px;
-      margin: 80px auto;
+      margin: auto;
       padding: 80px;
       font-size: 30px;
       text-align: center;
@@ -37,9 +47,9 @@
 
     .merch-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-gap: 50px;
-      margin-top: 75px; /* Adjust the margin-top value as per your requirement */
+      margin-top: 75px;
     }
 
     .merch-item {
@@ -70,38 +80,45 @@
 
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 72px;
+      font-size: 50px;
       padding: 10px 20px;
       border: none;
       color: #fff;
       text-decoration: underline;
       cursor: crosshair;
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 10px;
+      left: 10px;
     }
 
-
     .social-section {
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .social-footer {
       position: absolute;
-      bottom: 20px;
+      bottom: 0;
       left: 0;
       right: 0;
       text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
     }
 
-    .social-section h2 {
-      margin-bottom: 40px;
-      color: #000000;
+    .social-footer h2 {
+      margin-bottom: 10px;
     }
 
     .social-buttons {
       display: flex;
       justify-content: center;
+      margin-bottom: 20px;
     }
 
     .social-buttons a {
-      margin: 0 20px;
+      margin: 0 10px;
       text-decoration: none;
       display: flex;
       flex-direction: row;
@@ -130,7 +147,7 @@
     }
 
     .product-card button {
-      padding: 10px 20px;
+      padding: 5px 10px;
       background-color: #ffffff;
       color: #ffffff;
       border: none;
@@ -151,22 +168,22 @@
     }
 
     .button-container {
-  position: fixed;
-  top: 2px;
-  right: 10px;
-  font-family: 'Cinzel Decorative', sans-serif;
-  z-index: 9999;
-  display: flex;
-}
+      position: fixed;
+      top: 2px;
+      right: 10px;
+      font-family: 'Cinzel Decorative', sans-serif;
+      z-index: 9999;
+      display: flex;
+    }
 
-.buttons {
-  margin: 20px;
-  color: #fff;
-  cursor: crosshair;
-  font-size: 36px;
-  z-index: 9999;
-  display: inline-block;
-}
+    .buttons {
+      margin: 20px;
+      color: #fff;
+      cursor: crosshair;
+      font-size: 36px;
+      z-index: 9999;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -189,8 +206,9 @@
         </div>
       </div>
     </div>
-    <div class="social-section">
-      <h2></h2>
+  </div>
+  <div class="social-section">
+    <div class="social-footer">
       <div class="social-buttons">
         <a href="https://www.facebook.com/" target="_blank">
           <img src="pngfind.com-facebook-icon-white-png-2902824.png" alt="Facebook" class="social-button">

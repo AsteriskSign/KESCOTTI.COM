@@ -3,6 +3,12 @@
 <head>
   <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
   <title>Contact</title>
+  <meta name="viewport" content="width-device-width , initial-scale=1">
+  <script  defer src="js/bootstrap.bundle.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <style>
     @font-face {
       font-family: 'Cinzel Decorative';
@@ -10,6 +16,43 @@
       font-weight: 900;
       font-style: normal;
     }
+body::before {
+  content: "XS";
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+@media (min-width: 576px) {
+  body::before {
+    content: "SM";
+  }
+}
+
+@media (min-width: 768px) {
+  body::before {
+    content: "MD";
+  }
+}
+
+@media (min-width: 992px) {
+  body::before {
+    content: "LG";
+  }
+}
+
+@media (min-width: 1200px) {
+  body::before {
+    content: "XL";
+  }
+}
+
+@media (min-width: 1400px) {
+  body::before {
+    content: "XXL";
+  }}
     body {
       font-family: 'Cinzel Decorative', sans-serif;
       background-color: #000000;
@@ -22,13 +65,13 @@
     }
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 64px;
+      font-size: 50px;
       padding: 0px 0px;
       border: none;
       color: #fff;
-      text-decoration: none;
+      text-decoration: underline;
       transition: background-color 0.3s ease;
-      cursor: pointer;
+      cursor: crosshair;
     }
     .banner {
       color: #ffffff;
@@ -81,7 +124,7 @@
     .success-message {
       color: #ffffff;
       margin-top: 20px;
-      font-size: 20px;
+      font-size: 32px;
     }
   </style>
 </head>

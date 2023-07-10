@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
 <head>
   <title>KESCOTTI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-
     @font-face {
       font-family: 'Cinzel Decorative';
       src: url(CinzelDecorative-Black.ttf) format('truetype');
       font-weight: 900;
       font-style: normal;
     }
+
     body {
       font-family: 'Cinzel Decorative', sans-serif;
       background-image: url(indexvizzy.gif);
       background-repeat: no-repeat;
       background-size: cover;
-      color: #ffffff;
+      background-attachment: fixed;
       margin: 0;
       padding: 0;
     }
+
     .container {
-      max-width: 1000px;
+      max-width: 100%;
       margin: -150px auto;
       padding: 20px;
       display: flex;
@@ -30,78 +32,95 @@
       justify-content: center;
       height: 100vh;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 5vh;
       font-family: 'Cinzel Decorative', sans-serif;
       font-weight: 900;
-      font-size: 75px;
+      font-size: 6vh;
     }
+
     .button {
-      box-shadow:inset 0px 0px 0px -50px #000000;
-      border-radius:42px;
-      border:1px solid #ffffff;
+      box-shadow: inset 0px 0px 0px -50px #000000;
+      border-radius: 24px;
+      border: 1px solid #ffffff;
       display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
+      margin-bottom: 2vh;
+      padding: 1.5vh 4vh;
       background-color: #fdfafa;
       color: #000000;
       text-align: center;
       text-decoration: none;
       border-radius: 4px;
       transition: background-color 0.3s ease;
+      font-size: 2vh;
     }
+
     .button:active {
-  box-shadow: 0 5px #000000;
-  transform: translateY(4px);}
+      box-shadow: 0 5px #000000;
+      transform: translateY(4px);
+    }
+
     .button:hover {
       background-color: #000000;
       color: #ffffff;
     }
+
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 72px;
-      padding: 20px;
-      margin-bottom: 40px;
+      font-size: 8vh;
+      padding: 4vh;
+      margin-bottom: 3vh;
       border: none;
       color: #ffffff;
       text-decoration: underline;
       transition: background-color 0.3s ease;
       cursor: crosshair;
       text-align: center;
-      
     }
+
     .social-section {
       position: absolute;
-      bottom: 20px;
+      bottom: 2vh;
       left: 0;
       right: 0;
       text-align: center;
       cursor: crosshair;
     }
+
     .social-section h2 {
-      margin-bottom: 40px;
+      margin-bottom: 2vh;
       color: #000000;
     }
+
     .social-buttons {
       display: flex;
       justify-content: center;
     }
+
     .social-buttons a {
-      margin: 0 20px;
+      margin: 0 2vh;
       text-decoration: none;
       display: flex;
       flex-direction: row;
       align-items: center;
     }
+
     .social-button {
       opacity: 100%;
       transition: opacity 0s ease;
-      width: 24px;
-      height: 24px;
+      width: 4vh;
+      height: 4vh;
     }
+
     .social-button:hover {
       opacity: 1;
+    }
+    .footer {
+      margin-top: 2vh;
+      font-size: 2vh;
+      color: #ffffff;
     }
   </style>
 </head>
@@ -128,42 +147,17 @@
         <img src="youtube logo.png" alt="YouTube" class="social-button">
       </a>
     </div>
+    <div class="footer">
+      &copy; 2023 KESCOTTI. All rights reserved.
+    </div>
   </div>
   <div class="container">
     <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
-    <a class="button" href="merch.html">Store</a>
     <a class="button" href="tour.html">Tour</a>
+    <a class="button" href="merch.html">Store</a>
     <a class="button" href="music.html">Music</a>
     <a class="button" href="videos.html">Videos</a>
     <a class="button" href="contact.html">Contact Us</a>
   </div>
 </body>
-<script>
-var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.example.com/data', true);
-  
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var response = JSON.parse(xhr.responseText);
-      console.log(response);
-    }
-  };
-  
-  xhr.send();
-  fetch('https://api.example.com/data')
-  .then(function(response) {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error('Error: ' + response.status);
-    }
-  })
-  .then(function(data) {
-    console.log(data);
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
-
-  </script>
 </html>
