@@ -52,52 +52,57 @@
       background-size: cover;
       color: #fff;
       margin: 0;
-      padding: 60px;
+      padding: 2vh;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      min-height: 100vh;
     }
     h1 {
-      margin-bottom: 40px;
-      font-size: 32px;
+      margin-bottom: 5vh;
+      margin-right: 5vh;
+      font-size: 2.5vh;
       font-weight: 900;
     }
     .tour-dates {
-      list-style-type: none;
-      margin-top: 100px;
-      padding: 0;
-    }
+    display: flex;
+     flex-direction: column;
+    align-items: center;
+     justify-content: center;
+     height: 50vh; 
+     list-style-type: none;
+        }
     .tour-dates li {
-      margin-bottom: 30px;
-      font-size: 32px;
+      margin-bottom: 2vh;
+      font-size: 4vh;
     }
     .wrapper {
-   padding: 1rem;
-}
+      padding: 10vh;
+    
+
+    }
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 64px;
-      padding: 10px 20px;
+      font-size: 4vh;
       border: none;
       color: #fff;
       text-decoration: underline;
-      transition: background-color 0.3s ease;
       cursor: crosshair;
-      position: absolute;
-      top: 20px;
-      left: 20px;
+      position: fixed;
+      top: 1vh;
+      left: 1vh;
     }
     .button-container {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      text-decoration: underline;
+      position: fixed;
+      top: 1vh;
+      right: 1vh;
     }
+
     .button {
-      margin-left: 5px;
-      color: #fff;
-      cursor: crosshair;
-      font-size: 28px;
+      margin-left: 2vh;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 2vh;
     }
     .social-section {
       position: absolute;
@@ -106,10 +111,10 @@
       right: 0;
       text-align: center;
       cursor: crosshair;
-      padding: 20px;
+      padding: 1vh;
     }
     .social-section h2 {
-      margin-bottom: 40px;
+      margin-bottom: 2vh;
       color: #000000;
     }
     .social-buttons {
@@ -117,7 +122,7 @@
       justify-content: center;
     }
     .social-buttons a {
-      margin: 0 20px;
+      margin: 0 1vh;
       text-decoration: none;
       display: flex;
       flex-direction: row;
@@ -126,8 +131,8 @@
     .social-button {
       opacity: 100%;
       transition: opacity 0s ease;
-      width: 24px;
-      height: 24px;
+      width: 2.5vh;
+      height: 2.5vh;
     }
     .social-button:hover {
       opacity: 1;
@@ -136,16 +141,17 @@
       position: relative;
       bottom: 0;
       width: 100%;
-      height: 60px;
+      height: 6vh;
       text-align: center;
-      line-height: 60px;
+      line-height: 6vh;
     }
   </style>
 </head>
 <body>
+  <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
+
   <div class="wrapper">
     <div class="container">
-      <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
       <ul class="tour-dates">
         <li>SORRY - City A</li>
         <li>WE - City B</li>
@@ -154,9 +160,9 @@
         <li>IT - City E</li>
       </ul>
       <div class="button-container">
-        <a class="btn  button" href="music.html">Music</a>
+        <a class="btn button" href="music.html">Music</a>
         <a class="btn button" href="merch.html">Store</a>
-        <a class="btn  button" href="contact.html">Contact Us</a>
+        <a class="btn button" href="contact.html">Contact Us</a>
       </div>
     </div>
     <div class="social-section">
@@ -187,5 +193,14 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   <script>
+   function scalePage() {
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    var scale = viewportWidth / 1024; 
+
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=' + scale);
+}
+window.onload = scalePage;
+window.onresize = scalePage;</script>
 </body>
 </html>

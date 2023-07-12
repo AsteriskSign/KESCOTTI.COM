@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
   <title>Merch Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <style>
-    @font-face {
+   @font-face {
       font-family: 'Cinzel Decorative';
       src: url(CinzelDecorative-Black.ttf) format('truetype');
       font-weight: 900;
       font-style: normal;
+    }
+    body::before {
+      content: "XS";
+      color: rgb(0, 0, 0);
+      font-size: 2rem;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    @media (min-width: 576px) {
+      body::before {
+        content: "SM";
+      }
+    }
+
+    @media (min-width: 768px) {
+      body::before {
+        content: "MD";
+      }
+    }
+
+    @media (min-width: 992px) {
+      body::before {
+        content: "LG";
+      }
+    }
+
+    @media (min-width: 1200px) {
+      body::before {
+        content: "XL";
+      }
+    }
+
+    @media (min-width: 1400px) {
+      body::before {
+        content: "XXL";
+      }
     }
 
     body {
@@ -33,23 +71,25 @@
       align-items: center;
       max-width: 800px;
       margin: auto;
-      padding: 80px;
-      font-size: 30px;
+      padding: 5vw;
+      font-size: 2vw;
       text-align: center;
     }
 
     h1 {
-      margin-bottom: 80px;
+      margin-bottom: 5vw;
       font-family: 'Cinzel Decorative', sans-serif;
       font-weight: 900;
-      font-size: 24px;
+      font-size: 4vw;
     }
 
     .merch-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-gap: 50px;
-      margin-top: 75px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 2vw;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2vh;
     }
 
     .merch-item {
@@ -58,18 +98,19 @@
     }
 
     .merch-item img {
-      max-width: 75px;
+      max-width: 100%;
+      width: 10vw;
     }
 
     .button {
       display: block;
-      width: 200px;
-      margin: 0 auto 20px;
-      padding: 5px 5px;
+      width: 10vw;
+      margin: 0 auto 1vw;
+      padding: 0vw;
       color: #ffffff;
       text-align: center;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 2px;
       transition: background-color 0.3s ease;
     }
 
@@ -80,20 +121,20 @@
 
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 50px;
-      padding: 10px 20px;
+      font-size: 4vw;
+      padding: 0vw 2vw;
       border: none;
       color: #fff;
       text-decoration: underline;
       cursor: crosshair;
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 1vh;
+      left: 1vh;
     }
 
     .social-section {
       position: relative;
-      margin-top: 40px;
+      margin-top: 2vh;
     }
 
     .social-footer {
@@ -102,23 +143,23 @@
       left: 0;
       right: 0;
       text-align: center;
-      padding: 20px;
+      padding: 2vh;
       background-color: rgba(0, 0, 0, 0.8);
       color: #ffffff;
     }
 
     .social-footer h2 {
-      margin-bottom: 10px;
+      margin-bottom: 1vh;
     }
 
     .social-buttons {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 2vh;
     }
 
     .social-buttons a {
-      margin: 0 10px;
+      margin: 0 2vw;
       text-decoration: none;
       display: flex;
       flex-direction: row;
@@ -128,8 +169,8 @@
     .social-button {
       opacity: 100%;
       transition: opacity 0s ease;
-      width: 24px;
-      height: 24px;
+      width: 2vw;
+      height: 2vw;
     }
 
     .social-button:hover {
@@ -140,14 +181,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px;
-      padding: 20px;
+      margin-bottom: 2vh;
+      padding: 2vh;
       border: 1px solid #ffffff;
       border-radius: 5px;
     }
 
     .product-card button {
-      padding: 5px 10px;
+      padding: 1vw 2vw;
       background-color: #ffffff;
       color: #ffffff;
       border: none;
@@ -157,8 +198,8 @@
 
     .AddToCart button {
       font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 18px;
-      padding: 20px 20px;
+      font-size: 1.5vw;
+      padding: 2vh 2vw;
       border: none;
       color: #000000;
       text-decoration: none;
@@ -168,19 +209,19 @@
     }
 
     .button-container {
-      position: fixed;
-      top: 2px;
-      right: 10px;
+      position: absolute;
+      top: .5vh;
+      right: .5vh;
       font-family: 'Cinzel Decorative', sans-serif;
       z-index: 9999;
       display: flex;
     }
 
     .buttons {
-      margin: 20px;
+      margin: 2vh;
       color: #fff;
       cursor: crosshair;
-      font-size: 36px;
+      font-size: 2.5vh;
       z-index: 9999;
       display: inline-block;
     }
@@ -190,8 +231,6 @@
   <div class="button-container">
     <a class="buttons" href="faq.html">FAQ</a>
     <a class="buttons" href="tour.html">Tour</a>
-    <a class="buttons" href="music.html">Music</a>
-    <a class="buttons" href="videos.html">Videos</a>
     <a class="buttons" href="contact.html">Contact us</a>
   </div>
   <div class="container">
@@ -199,7 +238,31 @@
     <div class="merch-grid">
       <div class="merch-item">
         <img src="merch1.png" alt="Merch 1">
-        <p>Hoodie 1</p>
+        <p>Hoodie1</p>
+        <p>Price: $X.XX</p>
+        <div class="AddToCart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+      <div class="merch-item">
+        <img src="merch2.png" alt="Merch 2">
+        <p>Hoodie2</p>
+        <p>Price: $X.XX</p>
+        <div class="AddToCart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+      <div class="merch-item">
+        <img src="merch3.png" alt="Merch 3">
+        <p>Hoodie3</p>
+        <p>Price: $X.XX</p>
+        <div class="AddToCart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+      <div class="merch-item">
+        <img src="merch4.png" alt="Merch 4">
+        <p>Hoodie4</p>
         <p>Price: $X.XX</p>
         <div class="AddToCart">
           <button>Add to Cart</button>
@@ -231,5 +294,8 @@
       </div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 </body>
 </html>
