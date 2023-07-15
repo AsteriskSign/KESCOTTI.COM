@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <style>
-   @font-face {
+    @font-face {
       font-family: 'Cinzel Decorative';
       src: url(CinzelDecorative-Black.ttf) format('truetype');
       font-weight: 900;
@@ -99,24 +99,42 @@
 
     .merch-item img {
       max-width: 100%;
-      width: 10vw;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
-    .button {
+    .merch-item .item-info {
+      margin-bottom: 1rem;
+    }
+
+    .item-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-info p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-actions button {
       display: block;
-      width: 10vw;
-      margin: 0 auto 1vw;
-      padding: 0vw;
-      color: #ffffff;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 2px;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
-    .button:hover {
-      background-color: #ffffff;
-      color: #ffffff;
+    .item-actions button:hover {
+      background-color: #f5f5f5;
     }
 
     .back-button {
@@ -177,37 +195,6 @@
       opacity: 1;
     }
 
-    .product-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2vh;
-      padding: 2vh;
-      border: 1px solid #ffffff;
-      border-radius: 5px;
-    }
-
-    .product-card button {
-      padding: 1vw 2vw;
-      background-color: #ffffff;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .AddToCart button {
-      font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 1.5vw;
-      padding: 2vh 2vw;
-      border: none;
-      color: #000000;
-      text-decoration: none;
-      cursor: pointer;
-      text-align: center;
-      background-color: #ffffff;
-    }
-
     .button-container {
       position: absolute;
       top: .5vh;
@@ -238,33 +225,41 @@
     <div class="merch-grid">
       <div class="merch-item">
         <img src="merch1.png" alt="Merch 1">
-        <p>Hoodie1</p>
-        <p>Price: $X.XX</p>
-        <div class="AddToCart">
+        <div class="item-info">
+          <h3>Hoodie1</h3>
+          <p>Price: $X.XX</p>
+        </div>
+        <div class="item-actions">
           <button>Add to Cart</button>
         </div>
       </div>
       <div class="merch-item">
         <img src="merch2.png" alt="Merch 2">
-        <p>Hoodie2</p>
-        <p>Price: $X.XX</p>
-        <div class="AddToCart">
+        <div class="item-info">
+          <h3>Hoodie2</h3>
+          <p>Price: $X.XX</p>
+        </div>
+        <div class="item-actions">
           <button>Add to Cart</button>
         </div>
       </div>
       <div class="merch-item">
         <img src="merch3.png" alt="Merch 3">
-        <p>Hoodie3</p>
-        <p>Price: $X.XX</p>
-        <div class="AddToCart">
+        <div class="item-info">
+          <h3>Hoodie3</h3>
+          <p>Price: $X.XX</p>
+        </div>
+        <div class="item-actions">
           <button>Add to Cart</button>
         </div>
       </div>
       <div class="merch-item">
         <img src="merch4.png" alt="Merch 4">
-        <p>Hoodie4</p>
-        <p>Price: $X.XX</p>
-        <div class="AddToCart">
+        <div class="item-info">
+          <h3>Hoodie4</h3>
+          <p>Price: $X.XX</p>
+        </div>
+        <div class="item-actions">
           <button>Add to Cart</button>
         </div>
       </div>
