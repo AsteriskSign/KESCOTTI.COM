@@ -1,206 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KESCOTTI - Tour</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <style>
+    /* Common styles */
     @font-face {
       font-family: 'Cinzel Decorative';
       src: url(CinzelDecorative-Black.ttf) format('truetype');
       font-weight: 900;
       font-style: normal;
     }
-    body::before {
-      content: "XS";
-      color: rgb(0, 0, 0);
-      font-size: 2rem;
-      font-weight: bold;
-      position: fixed;
-      top: 0;
-      right: 0;
-    }
-    @media (min-width: 576px) {
-      body::before {
-        content: "SM";
-      }
-    }
-    @media (min-width: 768px) {
-      body::before {
-        content: "MD";
-      }
-    }
-    @media (min-width: 992px) {
-      body::before {
-        content: "LG";
-      }
-    }
-    @media (min-width: 1200px) {
-      body::before {
-        content: "XL";
-      }
-    }
-    @media (min-width: 1400px) {
-      body::before {
-        content: "XXL";
-      }
-    }
+
     body {
-      font-family: 'Cinzel Decorative', sans-serif;
+      font-family: 'Cinzel Decorative', Arial, sans-serif;
       background-color: black;
-      background-repeat: no-repeat;
-      background-size: cover;
       color: #fff;
       margin: 0;
-      padding: 2vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .wrapper {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      min-height: 100vh;
-    }
-    h1 {
-      margin-bottom: 5vh;
-      margin-right: 5vh;
-      font-size: 2.5vh;
-      font-weight: 900;
-    }
-    .tour-dates {
-    display: flex;
-     flex-direction: column;
-    align-items: center;
-     justify-content: center;
-     height: 50vh; 
-     list-style-type: none;
-        }
-    .tour-dates li {
-      margin-bottom: 2vh;
-      font-size: 4vh;
-    }
-    .wrapper {
-      padding: 10vh;
-    
-
-    }
-    .back-button {
-      font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 4vh;
-      border: none;
-      color: #fff;
-      text-decoration: underline;
-      cursor: crosshair;
-      position: fixed;
-      top: 1vh;
-      left: 1vh;
-    }
-    .button-container {
-      position: fixed;
-      top: 1vh;
-      right: 1vh;
-    }
-
-    .button {
-      margin-left: 2vh;
-      color: #ffffff;
-      cursor: pointer;
-      font-size: 2vh;
-    }
-    .social-section {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      cursor: crosshair;
-      padding: 1vh;
-    }
-    .social-section h2 {
-      margin-bottom: 2vh;
-      color: #000000;
-    }
-    .social-buttons {
-      display: flex;
-      justify-content: center;
-    }
-    .social-buttons a {
-      margin: 0 1vh;
-      text-decoration: none;
-      display: flex;
-      flex-direction: row;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-    .social-button {
-      opacity: 100%;
-      transition: opacity 0s ease;
-      width: 2.5vh;
-      height: 2.5vh;
+
+    .tour-dates {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 2rem;
     }
-    .social-button:hover {
-      opacity: 1;
+
+    .tour-dates li {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
-    .footer {
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      height: 6vh;
+
+    .button-container {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button-container a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #000;
+      padding: 0rem 0rem;
+      border-radius: 0.3rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-container a:hover {
+      background-color: #333;
+    }
+
+    .social-section {
       text-align: center;
-      line-height: 6vh;
+      margin-bottom: 2rem;
+    }
+
+    .social-buttons a {
+      margin: 0 0.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #888;
+    }
+
+    /* Media Queries */
+    @media only screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .tour-dates li {
+        font-size: 1.5rem;
+      }
+
+      .button-container {
+        flex-direction: fixed;
+        top: 5rem;
+        right: 5rem;
+        padding: 1rem 1rem;
+      }
+
+      .button-container a {
+        margin-bottom: 2rem;
+      }
+
+      .social-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .social-buttons img {
+        width: 20px;
+        height: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
+  <h1>KESCOTTI </h1>
 
   <div class="wrapper">
-    <div class="container">
-      <ul class="tour-dates">
-        <li>SORRY - City A</li>
-        <li>WE - City B</li>
-        <li>CANT - City C</li>
-        <li>MAKE - City D</li>
-        <li>IT - City E</li>
-      </ul>
-      <div class="button-container">
-        <a class="btn button" href="music.html">Music</a>
-        <a class="btn button" href="merch.html">Store</a>
-        <a class="btn button" href="contact.html">Contact Us</a>
-      </div>
-    </div>
-    <div class="social-section">
-      <h2>Social Media</h2>
-      <div class="social-buttons">
-        <a href="https://www.facebook.com/" target="_blank">
-          <img src="pngfind.com-facebook-icon-white-png-2902824.png" alt="Facebook" class="social-button">
-        </a>
-        <a href="https://www.instagram.com/kescotti/" target="_blank">
-          <img src="pngfind.com-instagram-png-white-2773517.png" alt="Instagram" class="social-button">
-        </a>
-        <a href="https://twitter.com/" target="_blank">
-          <img src="twitter logo.png" alt="Twitter" class="social-button">
-        </a>
-        <a href="https://discord.com/" target="_blank">
-          <img src="discord logo.png" alt="Discord" class="social-button">
-        </a>
-        <a href="https://tiktok.com/" target="_blank">
-          <img src="tiktok logo.png" alt="TikTok" class="social-button">
-        </a>
-        <a href="https://YouTube.com/" target="_blank">
-          <img src="youtube logo.png" alt="YouTube" class="social-button">
-        </a>
-      </div>
-      <div class="footer">
-        <p>© 2023 Your Company. All rights reserved.</p>
-      </div>
+    <h2>TOUR DATES</h2>
+    <ul class="tour-dates">
+      <li>SORRY - City A</li>
+      <li>WE - City B</li>
+      <li>CANT - City C</li>
+      <li>MAKE - City D</li>
+      <li>IT - City E</li>
+    </ul>
+    <div class="button-container">
+      <a class="btn" href="music.html">Music</a>
+      <a class="btn" href="merch.html">Store</a>
+      <a class="btn" href="contact.html">Contact Us</a>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-   <script>
-   function scalePage() {
-    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    var scale = viewportWidth / 1024; 
-
-    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=' + scale);
-}
-window.onload = scalePage;
-window.onresize = scalePage;</script>
+  <div class="social-section">
+    <h2>Follow Us on Social Media</h2>
+    <div class="social-buttons">
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="facebook-icon.png" alt="Facebook" width="30" height="30">
+      </a>
+      <a href="https://www.instagram.com/kescotti/" target="_blank">
+        <img src="instagram-icon.png" alt="Instagram" width="30" height="30">
+      </a>
+      <a href="https://twitter.com/" target="_blank">
+        <img src="twitter-icon.png" alt="Twitter" width="30" height="30">
+      </a>
+      <a href="https://discord.com/" target="_blank">
+        <img src="discord-icon.png" alt="Discord" width="30" height="30">
+      </a>
+      <a href="https://tiktok.com/" target="_blank">
+        <img src="tiktok-icon.png" alt="TikTok" width="30" height="30">
+      </a>
+      <a href="https://YouTube.com/" target="_blank">
+        <img src="youtube-icon.png" alt="YouTube" width="30" height="30">
+      </a>
+    </div>
+  </div>
+  <div class="footer">
+    <p>© 2023 Your Company. All rights reserved.</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
