@@ -1,297 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Merch Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <style>
-    @font-face {
-      font-family: 'Cinzel Decorative';
-      src: url(CinzelDecorative-Black.ttf) format('truetype');
-      font-weight: 900;
-      font-style: normal;
-    }
-    body::before {
-      content: "XS";
-      color: rgb(0, 0, 0);
-      font-size: 2rem;
-      font-weight: bold;
-      position: fixed;
-      top: 0;
-      right: 0;
-    }
+<div id="my-store-89715825"></div>
+<div>
+<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?89715825&data_platform=code&data_date=2023-07-26" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-89715825");</script>
+</div>
+<div id="my-categories-89715825"></div>
+<div>
+    <div id="my-search-89715825"></div>
+<div>
+<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?89715825&data_platform=code&data_date=2023-07-26" charset="utf-8"></script>
+<script type="text/javascript"> xSearch("id=my-search-89715825"); </script>
+</div>
+<div class="ec-cart-widget"></div>
+<div>
+<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?89715825&data_platform=code&data_date=2023-07-26" charset="utf-8"></script>
+<script type="text/javascript">Ecwid.init();</script>
+</div>
+<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?89715825&data_platform=code&data_date=2023-07-26" charset="utf-8"></script>
+<script type="text/javascript"> xCategoriesV2("id=my-categories-89715825"); </script>
+</div>
 
-    @media (min-width: 576px) {
-      body::before {
-        content: "SM";
-      }
-    }
 
-    @media (min-width: 768px) {
-      body::before {
-        content: "MD";
-      }
-    }
-
-    @media (min-width: 992px) {
-      body::before {
-        content: "LG";
-      }
-    }
-
-    @media (min-width: 1200px) {
-      body::before {
-        content: "XL";
-      }
-    }
-
-    @media (min-width: 1400px) {
-      body::before {
-        content: "XXL";
-      }
-    }
-
-    body {
-      font-family: 'Cinzel Decorative', sans-serif;
-      background-color: #000000;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      max-width: 800px;
-      margin: auto;
-      padding: 5vw;
-      font-size: 2vw;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 5vw;
-      font-family: 'Cinzel Decorative', sans-serif;
-      font-weight: 900;
-      font-size: 4vw;
-    }
-
-    .merch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-gap: 2vw;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2vh;
-    }
-
-    .merch-item {
-      text-align: center;
-      color: #ffffff;
-    }
-
-    .merch-item img {
-      max-width: 100%;
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .merch-item .item-info {
-      margin-bottom: 1rem;
-    }
-
-    .item-info h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .item-info p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .item-actions button {
-      display: block;
-      width: 100%;
-      padding: 0.75rem;
-      background-color: #ffffff;
-      color: #000000;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .item-actions button:hover {
-      background-color: #f5f5f5;
-    }
-
-    .back-button {
-      font-family: 'Cinzel Decorative', sans-serif;
-      font-size: 4vw;
-      padding: 0vw 0vw;
-      border: none;
-      color: #fff;
-      text-decoration: underline;
-      cursor: crosshair;
-      position: fixed;
-      top: 1vh;
-      left: 1vh;
-    }
-
-    .social-section {
-      position: relative;
-      margin-top: 2vh;
-    }
-
-    .social-footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      padding: 2vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #ffffff;
-    }
-
-    .social-footer h2 {
-      margin-bottom: 1vh;
-    }
-
-    .social-buttons {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2vh;
-    }
-
-    .social-buttons a {
-      margin: 0 2vw;
-      text-decoration: none;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .social-button {
-      opacity: 100%;
-      transition: opacity 0s ease;
-      width: 3vh;
-      height: 4vh;
-    }
-
-    .social-button:hover {
-      opacity: 1;
-    }
-
-    .button-container {
-      position: fixed;
-      top: -1vh;
-      right: -1vh;
-      font-family: 'Cinzel Decorative', sans-serif;
-      z-index: 9999;
-      display: flex;
-      padding: 0vw 0vw;
-    }
-
-    .buttons {
-      margin: 2vh;
-      color: #fff;
-      cursor: crosshair;
-      font-size: 2vh;
-      z-index: 9999;
-      display: inline-block;
-    }
-  </style>
-</head>
-<body>
-  <div class="button-container">
-    <a class="buttons" href="faq.html">FAQ</a>
-    <a class="buttons" href="tour.html">Tour</a>
-    <a class="buttons" href="contact.html">Contact us</a>
-  </div>
-  <div class="container">
-    <h1><a class="back-button" href="index.html">KESCOTTI</a></h1>
-    <div class="merch-grid">
-      <div class="merch-item">
-        <img src="merch1.png" alt="Merch 1">
-        <div class="item-info">
-          <h3>Hoodie1</h3>
-          <p>Price: $X.XX</p>
-        </div>
-        <div class="item-actions">
-          <button>Add to Cart</button>
-        </div>
-      </div>
-      <div class="merch-item">
-        <img src="merch2.png" alt="Merch 2">
-        <div class="item-info">
-          <h3>Hoodie2</h3>
-          <p>Price: $X.XX</p>
-        </div>
-        <div class="item-actions">
-          <button>Add to Cart</button>
-        </div>
-      </div>
-      <div class="merch-item">
-        <img src="merch3.png" alt="Merch 3">
-        <div class="item-info">
-          <h3>Hoodie3</h3>
-          <p>Price: $X.XX</p>
-        </div>
-        <div class="item-actions">
-          <button>Add to Cart</button>
-        </div>
-      </div>
-      <div class="merch-item">
-        <img src="merch4.png" alt="Merch 4">
-        <div class="item-info">
-          <h3>Hoodie4</h3>
-          <p>Price: $X.XX</p>
-        </div>
-        <div class="item-actions">
-          <button>Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="social-section">
-    <div class="social-footer">
-      <div class="social-buttons">
-        <a href="https://www.facebook.com/" target="_blank">
-          <img src="pngfind.com-facebook-icon-white-png-2902824.png" alt="Facebook" class="social-button">
-        </a>
-        <a href="https://www.instagram.com/" target="_blank">
-          <img src="pngfind.com-instagram-png-white-2773517.png" alt="Instagram" class="social-button">
-        </a>
-        <a href="https://twitter.com/" target="_blank">
-          <img src="twitter logo.png" alt="Twitter" class="social-button">
-        </a>
-        <a href="https://discord.com/" target="_blank">
-          <img src="discord logo.png" alt="Discord" class="social-button">
-        </a>
-        <a href="https://tiktok.com/" target="_blank">
-          <img src="tiktok logo.png" alt="TikTok" class="social-button">
-        </a>
-        <a href="https://YouTube.com/" target="_blank">
-          <img src="youtube logo.png" alt="YouTube" class="social-button">
-        </a>
-      </div>
-    </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-</body>
-</html>
+<script type="text/javascript"> 
+window.ec=window.ec||{}; 
+window.ec.storefront=window.ec.storefront||{}; 
+window.ec.storefront.enable_navigation=true;
+window.ec.storefront.product_details_layout="TWO_COLUMNS_SIDEBAR_ON_THE_RIGHT";
+window.ec.storefront.product_details_gallery_layout="IMAGE_SINGLE_THUMBNAILS_VERTICAL";
+window.ec.storefront.product_details_two_columns_with_right_sidebar_show_product_description_on_sidebar=false;
+window.ec.storefront.product_details_two_columns_with_left_sidebar_show_product_description_on_sidebar=false;
+window.ec.storefront.product_details_show_product_name=true;
+window.ec.storefront.product_details_show_breadcrumbs=true;
+window.ec.storefront.product_details_show_product_sku=false;
+window.ec.storefront.product_details_show_product_price=true;
+window.ec.storefront.product_details_show_in_stock_label=true;
+window.ec.storefront.product_details_show_number_of_items_in_stock=true;
+window.ec.storefront.product_details_show_qty=true;
+window.ec.storefront.product_details_show_wholesale_prices=true;
+window.ec.storefront.product_details_show_product_options=true;
+window.ec.storefront.product_details_show_product_description=true;
+window.ec.storefront.product_details_show_delivery_time=undefined;
+window.ec.storefront.product_details_show_share_buttons=true;
+window.ec.storefront.product_details_position_product_name=100;
+window.ec.storefront.product_details_position_breadcrumbs=200;
+window.ec.storefront.product_details_position_product_sku=300;
+window.ec.storefront.product_details_position_product_price=400;
+window.ec.storefront.product_details_position_product_options=undefined;
+window.ec.storefront.product_details_position_buy_button=600;
+window.ec.storefront.product_details_position_wholesale_prices=700;
+window.ec.storefront.product_details_position_product_description=900;
+window.ec.storefront.product_details_position_delivery_time=undefined;
+window.ec.storefront.product_details_position_share_buttons=800;
+window.ec.storefront.product_details_position_subtitle=500;
+window.ec.storefront.product_details_show_subtitle=true;
+xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","defaultProductId=574523042","id=my-store-89715825");
+</script>
+</div>
