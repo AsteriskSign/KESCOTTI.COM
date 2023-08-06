@@ -84,10 +84,7 @@
       padding: 0 5vw;
     }
 
-    .slick-prev:before,
-    .slick-next:before {
-      color: #000;
-    }
+    
 
     .center {
       position: relative;
@@ -107,8 +104,8 @@
       transform: scale(1.05);
     }
 
-    .slick-prev,
-    .slick-next {
+    .prev,
+    .next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -121,15 +118,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+      cursor: crosshair;
       margin-top: 10vh;
     }
 
-    .slick-prev {
+    .prev {
       left: 10vw;
     }
 
-    .slick-next {
+    .next {
       right: 10vw;
     }
 
@@ -293,8 +290,8 @@
         </a>
       </div>
     </div>
-    <div class="slick-prev">&#10229;</div>
-    <div class="slick-next">&#10230;</div>
+    <div class="prev">&#10229;</div>
+    <div class="next">&#10230;</div>
   </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -308,8 +305,8 @@
       autoplay: true,
       autoplaySpeed: 2400,
       draggable: true,
-      prevArrow: $('.slick-prev'),
-      nextArrow: $('.slick-next'),
+      prevArrow: $('.prev'),
+      nextArrow: $('.next'),
       responsive: [
         {
           breakpoint: 768,
