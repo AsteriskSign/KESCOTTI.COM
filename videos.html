@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="font/CinzelDecorative-Bold.ttf">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/bootstrap.bundle.js"></script>
 
   <style>
@@ -77,58 +76,74 @@
     }
 
     .slick-slide {
-      margin: 0 10px;
+      margin: 10px 20px;
     }
 
     section {
-      padding: 0 5vw;
+      padding: 0 20vw;
     }
 
     
 
     .center {
       position: relative;
-      margin-top: 20vh;
+      margin-top: 26vh;
       transform: translateY(-50%);
     }
 
     .center img {
-      width: 50px;
-      height: 300px;
-      object-fit: fill;
+      width: 100vw;
+      height: auto;
+      object-fit: cover;
       transition: transform 0.3s ease;
-      cursor: pointer;
+      cursor: crosshair;
     }
 
     .center img:hover {
       transform: scale(1.05);
     }
 
-    .prev,
-    .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      font-size: 100px;
-      color: #fff;
-      cursor: pointer;
-      background: transparent;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: crosshair;
-      margin-top: 10vh;
-    }
+    .prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+  margin-top: 15vh;
+}
 
-    .prev {
-      left: 10vw;
-    }
+.prev-button {
+  left: 20vw;
+}
 
-    .next {
-      right: 10vw;
-    }
+.next-button {
+  right: 20vw;
+}
+
+.prev-button button,
+.next-button button {
+  font-size: 100px;
+  color: #fff;
+  border-radius: 50%;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: crosshair;
+}
+
+.prev-button button:hover,
+.next-button button:hover {
+  transform: scale(1.4);
+  color: white;
+}
+
 
     .back-button {
       font-family: 'Cinzel Decorative', sans-serif;
@@ -137,7 +152,8 @@
       border: none;
       color: #fff;
       text-decoration: underline;
-      cursor: pointer;
+      cursor: crosshair;
+      position: sticky;
     }
 
     .button-container {
@@ -147,9 +163,9 @@
     }
 
     .button {
-      margin-left: 2vh;
+      margin-left: 1vh;
       color: #ffffff;
-      cursor: pointer;
+      cursor: crosshair;
       font-size: 2vh;
     }
 
@@ -182,8 +198,8 @@
     .social-button {
       opacity: 100%;
       transition: opacity 0s ease;
-      width: 2vh;
-      height: 2vh;
+      width: 4vh;
+      height: 4vh;
     }
 
     .social-button:hover {
@@ -290,8 +306,14 @@
         </a>
       </div>
     </div>
-    <div class="prev">&#10229;</div>
-    <div class="next">&#10230;</div>
+   
+<div class="prev-button">
+  <button class="prev">&#x2190;</button>
+</div>
+<div class="next-button">
+  <button class="next">&#x2192;</button>
+</div>
+
   </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
