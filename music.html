@@ -67,7 +67,7 @@
       }
     }
 
-    body {
+    .body {
       font-family: 'Cinzel Decorative', sans-serif;
       background-color: #000000;
       background-repeat: no-repeat;
@@ -77,16 +77,13 @@
     }
 
     .slick-slide {
-      margin: 10px 20px;
+      margin: 15px 25px;
     }
 
-    section {
-      padding: 0 20vw;
+    .section {
+      padding: 2 20vw;
     }
-
-    
-
-    .center {
+   .center {
       position: relative;
       margin-top: 26vh;
       transform: translateY(-50%);
@@ -122,11 +119,11 @@
 }
 
 .prev-button {
-  left: 20vw;
+  left: 10vw;
 }
 
 .next-button {
-  right: 20vw;
+  right: 10vw;
 }
 
 .prev-button button,
@@ -328,8 +325,8 @@
       autoplay: true,
       autoplaySpeed: 2400,
       draggable: true,
-      prevArrow: $('.prev'),
-      nextArrow: $('.next'),
+      prevArrow: $('.prev-button'),
+      nextArrow: $('.next-button'),
       responsive: [
         {
           breakpoint: 768,
