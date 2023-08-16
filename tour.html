@@ -26,7 +26,6 @@
       background-color: black;
       color: #fff;
       margin: 0;
-      padding: 2rem;
     }
 
     h1 {
@@ -35,70 +34,115 @@
       font-weight: bold;
       color: #fff;
     }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
     .tour-dates {
-      list-style-type: none;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Center the list items horizontally */
+}
+.wrapper {
+    text-align: center;
+    margin-top: 30px; /* Adjust this value to control the spacing */
+}
 
-    .tour-dates li {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
+h2 {
+    margin-bottom: 20px; /* Adjust this value to control the spacing */
+}
 
-    .button-container {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      display: flex;
-      justify-content: space-between;
-    }
+.tour-dates-wrapper {
+    margin-top: 20px; /* Adjust this value to control the spacing between heading and tour dates */
+}
 
+ul.tour-dates {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.tour-dates li {
+    margin-bottom: 10px; /* Adjust this value to control the spacing between tour date items */
+    font-size: 36px; /* Adjust this value to set the font size of tour dates */
+    letter-spacing: 5px;
+}
+
+
+
+.button-container {
+  position: absolute;
+  top: .5rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: crosshair; 
+}
     .button-container a {
       text-decoration: none;
-      color: #fff;
+      color: #ffffff;
       background-color: #000;
-      padding: 0rem 0rem;
+      padding: .5rem .5rem;
       border-radius: 0.3rem;
       transition: background-color 0.3s ease;
     }
 
     .button-container a:hover {
-      background-color: #333;
+      background-color: #000000;
+    }
+    .footer {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 5px;
+}
+    .social-section {
+      position: absolute;
+      bottom: 2vh;
+      left: 0;
+      right: 0;
+      text-align: center;
+      cursor: crosshair;
     }
 
-    .social-section {
-      text-align: center;
-      margin-bottom: 2rem;
+    .social-section h2 {
+      margin-bottom: 4vh;
+      color: #000000;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
     }
 
     .social-buttons a {
-      margin: 0 0.5rem;
+      margin: 0 2vh;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 2rem;
-      color: #888;
+    .social-button {
+      opacity: 100%;
+      transition: opacity 0s ease;
+      width: 4vh;
+      height: 4vh;
+    }
+
+    .social-button:hover {
+      opacity: 1;
     }
 
     /* Media Queries */
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 768vw) {
       h1 {
         font-size: 2rem;
       }
 
       .tour-dates li {
-        font-size: 1.5rem;
+        font-size: 4rem;
       }
 
       .button-container {
@@ -113,12 +157,12 @@
       }
 
       .social-section h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
 
       .social-buttons img {
-        width: 20px;
-        height: 20px;
+        width: 2vw;
+        height: 3vh;
       }
     }
   </style>
@@ -128,49 +172,52 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55J569QL"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <h1>KESCOTTI </h1>
+  
+  <div><h1>KESCOTTI </h1></div>
 
   <div class="wrapper">
-    <h2>TOUR DATES</h2>
-    <ul class="tour-dates">
-      <li>SORRY - City A</li>
-      <li>WE - City B</li>
-      <li>CANT - City C</li>
-      <li>MAKE - City D</li>
-      <li>IT - City E</li>
-    </ul>
-    <div class="button-container">
-      <a class="btn" href="music.html">Music</a>
-      <a class="btn" href="merch.html">Store</a>
-      <a class="btn" href="contact.html">Contact Us</a>
-    </div>
-  </div>
-  <div class="social-section">
-    <h2>Follow Us on Social Media</h2>
-    <div class="social-buttons">
-      <a href="https://www.facebook.com/" target="_blank">
-        <img src="facebook-icon.png" alt="Facebook" width="30" height="30">
-      </a>
-      <a href="https://www.instagram.com/kescotti/" target="_blank">
-        <img src="instagram-icon.png" alt="Instagram" width="30" height="30">
-      </a>
-      <a href="https://twitter.com/" target="_blank">
-        <img src="twitter-icon.png" alt="Twitter" width="30" height="30">
-      </a>
-      <a href="https://discord.com/" target="_blank">
-        <img src="discord-icon.png" alt="Discord" width="30" height="30">
-      </a>
-      <a href="https://tiktok.com/" target="_blank">
-        <img src="tiktok-icon.png" alt="TikTok" width="30" height="30">
-      </a>
-      <a href="https://YouTube.com/" target="_blank">
-        <img src="youtube-icon.png" alt="YouTube" width="30" height="30">
-      </a>
+    <div><h2>TOUR DATES</h2></div>
+    <div class="tour-dates-wrapper">
+      <ul class="tour-dates">
+        <li>SORRY - City A</li>
+        <li>WE - City B</li>
+        <li>CANT - City C</li>
+        <li>MAKE - City D</li>
+        <li>IT - City E</li>
+      </ul>
     </div>
   </div>
   <div class="footer">
-    <p>© 2023 Your Company. All rights reserved.</p>
+    &copy; 2023 KESCOTTI. All rights reserved.
+  </div>
+  <div class="social-section">
+    <h2>Follow us on social media</h2>
+    <div class="social-buttons">
+      <a href="https://www.instagram.com/kescotti/" target="_blank">
+        <img src="instapng.png" alt="Instagram" class="social-button">
+      </a>
+      <a href="https://discord.com/" target="_blank">
+        <img src="discord logo.png" alt="Discord" class="social-button">
+      </a>
+      <a href="https://tiktok.com/" target="_blank">
+        <img src="tiktok logo.png" alt="TikTok" class="social-button">
+      </a>
+      <a href="https://YouTube.com/" target="_blank">
+        <img src="youtube logo.png" alt="YouTube" class="social-button">
+      </a>
+    </div>
+  </div>
+  <div class="button-container">
+    <a class="btn" href="music.html">Music</a>
+    <a class="btn" href="merch.html">Store</a>
+    <a class="btn" href="contact.html">Contact Us</a>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
